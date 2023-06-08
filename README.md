@@ -88,6 +88,7 @@ pyteste test/
 Frontend
 
 * Organizar os componentes
+* Adicionar validações nos campos e mostras essas validações visualmente
 * Refatorar removendo funções duplicadas
 * Adicionar caixas de alerta quando uma ação de alteração/ cancelamento for efetuada
 * Realizar teste de interface
