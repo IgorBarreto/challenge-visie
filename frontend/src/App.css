@@ -1,0 +1,98 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f4f4f4;
+  padding: 30px;
+  color: #333;
+}
+
+.app {
+  max-width: 600px;
+  margin: 0 auto 300px;
+  background-color: #efefef;
+  padding: 20px 30px;
+}
+
+h1 {
+  text-align: center;
+}
+
+h2 {
+  margin-bottom: 10px;
+}
+
+input {
+  box-sizing: border-box;
+}
+
+button {
+  background-color: #333974;
+  color: #fff;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  opacity: 0.8;
+  transform: .3s;
+
+}
+
+button:hover {
+  opacity: 1;
+}
+
+.detail {
+  background-color: blue;
+
+}
+
+.remove {
+  background-color: red;
+}
+
+person-form {
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px;
+}
+
+input {
+  padding: 5px 10px;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  width: 60%;
+}
+
+.form-row {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 10px;
+}
+
+.person {
+  background-color: #fff;
+  /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
+  /* padding: 10px;
+  margin-bottom: 10px; */
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.form-label {
+  width: 100px;
+}
+
+.form-input {
+  margin-left: 10px;
+  width: 100%;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.content p {
+  margin: 10px;
+}
