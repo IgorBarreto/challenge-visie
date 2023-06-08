@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-
-const PersonForm = ({ sendPerson }) => {
+import { Link } from 'react-router-dom'
+const PersonForm = () => {
     const [name, setName] = useState("")
     const [rg, setRg] = useState("")
     const [cpf, setCpf] = useState("")
@@ -22,8 +22,41 @@ const PersonForm = ({ sendPerson }) => {
         setFunc('')
         alert('Dados Cadastrados')
     }
+    const sendPerson = (name, cpf, rg, birth, admission, func) => {
+        const url = 'http://localhost:8000/pessoas/';  // Substitua pelo URL correto da sua API
+        console.log('ESTOU ENTRANDO')
+        const person =
+
+        {
+            "nome": name,
+            "rg": rg,
+            "cpf": cpf,
+            "data_nascimento": birth,
+            "data_admissao": admission,
+            "funcao": func,
+        };
+        fetch(url, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(person)
+        })
+            .then(response => response.json())
+            .then(data => {
+                console.log('Resposta:', data);
+                const newPersons = [...persons, data]
+                setPersons(newPersons)
+                // Faça algo com a resposta da requisição
+            })
+            .catch(error => {
+                console.error('Erro:', error);
+                // Faça algo com o erro ocorrido durante a requisição
+            });
+    }
     return (
         <div className='person-form'>
+            <h1>Cadastrar Nova Pessoa</h1>
             <form onSubmit={handleSubmit}>
                 <div className='form-row'>
                     <label className='form-label' htmlFor="name">Nome Completo: </label>
@@ -49,6 +82,9 @@ const PersonForm = ({ sendPerson }) => {
                     <label className='form-label' htmlFor="function">Função: </label>
                     <input value={func} onChange={(e) => setFunc(e.target.value)} className='form-input' type="text" placeholder='Desenvolvedor web' />
                 </div>
+                <Link to={'/'}>
+                    <button style={{ marginRight: "5px", backgroundColor: "#000" }} >Voltar</button>
+                </Link>
                 <button type="submit">Adicionar Pessoa</button>
 
             </form >
