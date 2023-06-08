@@ -2,8 +2,7 @@
 */.env
 **/__pycache__/**
 challenges/*
-**/*.db
-
+**/test.db
 # Logs
 logs
 *.log
